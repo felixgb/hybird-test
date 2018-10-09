@@ -7,6 +7,7 @@ module Server
     ) where
 
 import Web.Scotty
+import Network.Wai.Middleware.Cors
 import qualified Data.ByteString.Lazy as BL
 import Data.Text (Text)
 import Data.Csv
@@ -39,6 +40,8 @@ readPointsCsv name = do
     Left err -> error err
     Right (_, v) -> pure $ V.toList v
 
-serve points = scotty 8000 $
+serve :: [Point] -> IO ()
+serve points = scotty 8000 $ do
+  middleware simpleCors
   get "/:points" $ do
     json points

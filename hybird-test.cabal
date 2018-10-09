@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 424e157ac940066e79468b6fb7093d6605f12dcfc98c6efd87b8deef51cf02d3
+-- hash: 06ecc3f75103911579fdc658ec6cb4fbc474315a592d96a90ed26d8cf336272e
 
 name:           hybird-test
 version:        0.1.0.0
@@ -40,6 +40,7 @@ library
     , scotty
     , text
     , vector
+    , wai-cors
   default-language: Haskell2010
 
 executable hybird-test-exe
@@ -58,6 +59,7 @@ executable hybird-test-exe
     , scotty
     , text
     , vector
+    , wai-cors
   default-language: Haskell2010
 
 test-suite hybird-test-test
@@ -77,4 +79,5 @@ test-suite hybird-test-test
     , scotty
     , text
     , vector
+    , wai-cors
   default-language: Haskell2010
